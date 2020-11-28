@@ -17,7 +17,9 @@
     <% elsif current_user %>
       <%= link_to "Your Orders", my_orders_path(id: current_user.id) %>
     <% end %>
+    
     <% if current_user %>
+      Hi, <%= current_user.name %>!
       <%= link_to "Logout", logout_path %>
     <% else %>
       <%= link_to "Sign Up", signup_path %>
