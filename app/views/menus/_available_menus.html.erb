@@ -1,0 +1,13 @@
+<div class = "Menu_Heading_Wrapper">
+  <h3 class="Menu_Heading">Active Menus</h3>
+</div>
+<section class="Menu_Section_Wrapper">
+  <% @active.each do |menu| %>
+    <%= link_to menu, class: "Menu_Card_Link" do %>
+      <div class="Menu_Card">
+          <%= image_tag(menu.thumbnail, :class =>"Menu_Card_Image")%>
+        <h6 class = "Menu_Card_Title"><%= menu.name %></h6>
+      </div>
+    <% end %>
+  <% end %>
+</section>

@@ -1,0 +1,100 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*
+ *= require font-awesome
+ */
+
+:root {
+  --bg1: #eee0cb;
+  --bg2: #fffacc;
+  --text-primary: #5a464c;
+  --text-secondary: #53131e;
+  --blue: #0c2d82;
+}
+* {
+  font-family: "Lato", sans-serif !important;
+}
+body {
+  background-color: var(--bg1);
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field > input {
+  width: 70%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 0;
+  outline: none;
+}
+
+.field > input:focus {
+  box-shadow: 1px 1px 20px rgba(165, 40, 40, 0.137);
+}
+
+.field > input[type="file"] {
+  box-shadow: none;
+  width: initial;
+}
+
+#notice-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  text-align: center;
+  background-color: rgba(0, 128, 0, 0.603);
+  z-index: 999;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  width: 100%;
+  height: 9vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.brand-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-section > p {
+  font-size: 24px;
+  font-weight: 900;
+  margin-left: 40px;
+}
+
+.navbar-brand-logo {
+  width: 6vh;
+  border-radius: 10px;
+}
+
+.links-section > a {
+  margin: 0 20px;
+}

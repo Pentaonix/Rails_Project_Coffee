@@ -1,0 +1,37 @@
+<div class="user-list-title-wrapper">
+  <h4 class="users-list-title">Orders</h4>
+</div>
+<div class="order-wrapper">
+  <div class="order-filter-wrapper">
+    <div class = "orders-filters">
+      <h5>Filters</h5>
+      <hr class="horizontal-line"/>
+      <%= link_to "Today's Orders", orders_path(today: true)%>
+      <%= link_to "All", orders_path %>
+      <%= link_to "Completed", orders_path(completed: true) %>
+      <%= link_to "Pending", orders_path(pending: true) %>
+      <% if is_admin %>
+
+        <h5>Search</h5>
+        <hr class="horizontal-line" />
+        <div>
+          <%= form_tag({},{:method => :get, :class=>"search-by-user"}) do %>
+            <%= number_field_tag 'user', nil, min: 1, placeholder: "@user_id eg: 14" %>
+            <%= submit_tag "Search by User"%>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="order-list-table-wrapper">
+    <%= render :partial => "orders_table", :locals => {orders: @orders, my_orders: false}%>
+    <div class="pagination">
+      <% if @page != 0 %>
+        <%= link_to "Previous Page", orders_path(page: @page - 1)%>
+      <% end %>
+      <% if (@page+1) * 8 <= Order.count %>
+       <%= link_to "Next Page", orders_path(page: @page + 1)%>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CoffeeShop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap' %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= yield :page_scripts %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if notice %>
+      <div id="notice-wrapper">
+        <p id="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <%= render :partial => "layouts/navbar"%>
+    <%= yield %>
+  </body>
+</html>

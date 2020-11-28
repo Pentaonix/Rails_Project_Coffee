@@ -1,0 +1,33 @@
+<div class="order-details-wrapper">
+  <div class = "order-detail-card">
+    <section class="order-title-section">
+      <h4>Order ID #<%= @order.id %></h4>
+      <h5><%= @order.created_at.to_s(:long)%></h5>
+    </section>
+    <p>Ordered By: <%= @order.user.name %></p>
+    <section class="order-items-list">
+      <table>
+        <thead>
+          <tr>
+            <td> Name </td>
+            <td> Price / unit </td>
+            <td> Quantity </td>
+            <td> Sub Total </td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order_items.each do |item| %>
+            <tr>
+              <td><%= item.menu_item.name %></td>
+              <td><%= item.menu_item.price %></td>
+              <td><%= item.quantity %></td>
+              <td><%= item.total %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <h6 class="order-grand-total">Total amount paid: <span class="order-details-total"> Rs.<%= @order.total %></span></h6>
+    </section>
+    <%= link_to "Download Invoice", invoice_path(id: @order.id), class: "download-invoice" %>
+  </div>
+</div>

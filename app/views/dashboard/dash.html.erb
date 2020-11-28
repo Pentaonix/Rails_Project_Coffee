@@ -1,0 +1,34 @@
+
+<div class="Dashboard">
+  <div class="Dash-sidebar">
+    <% @menu.each do |menu |%>
+      <%= link_to "MENU #{menu["id"]}", dashboard_path(id: menu["id"],class: "Dash-buttons") %>
+    <%end%>
+  </div>
+  <div class="Dash-charts">
+    <div class="Dash-heading">
+        <h4>ADMIN DASHBOARD </h4>
+        <%= image_tag("dashboard.svg", :class => "Dashboard_Icon") %>
+    </div>
+    <p class="Dash-active">MENU ACTIVE : <span class="Dash-Active"><%= @active_menu[:name]%></span></p>
+    <div class="Dash-card">
+      <div>
+        <%= pie_chart @dish_and_count%>
+        <h6 class="Chart-label"> DISHES' ORDERS-COUNT </h6>
+      </div>
+      <div>
+        <%= area_chart @dish_and_amount, xtitle: "Dish", ytitle: "Amount of purchase(Rs.)",colors: ["#000", "#666"] %>
+        <h6 class="Chart-label"> DISHES' ORDERS-TOTAL_SUM (Rs.) </h6>
+      </div>
+      <div>
+        <%= line_chart @revenue_daily , xtitle: "Day", ytitle: "Revenue (Rs.)",colors: ["#0f0", "#666"] %>
+        <h6 class="Chart-label"> REVENUE (Rs.) per DAY </h6>
+      </div>
+      <div>
+        <%= pie_chart @completed_and_pending, xtitle: "Count", ytitle: "Status",donut: true, colors: ["#FF4500","#0f0"]%>
+
+        <h6 class="Chart-label"> ORDER-STATUS </h6>
+      </div>
+    </div>
+  </div>
+</div>

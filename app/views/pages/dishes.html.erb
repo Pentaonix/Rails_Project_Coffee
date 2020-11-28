@@ -1,0 +1,83 @@
+<div>
+<% if @dishes && @menu %>
+  <div class="Menu-Cart">
+    <h4 class="Menu-heading">MENU TODAY : <%= @menu.name %> </h4>
+    <details class="Cart">
+      <summary class = "Cart-heading">SHOPPING BASKET  : <%= pluralize @cart.size, 'item' %><%= image_tag("cart.svg", :class => "Menu_Cash_Icon") %></summary>
+      <table class="Cart-list">
+        <thead>
+          <tr>
+            <th>DISH</th>
+            <th>Quantity</th>
+            <th>REMOVE</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @cart.each do |item| %>
+          <tr class="Cart-row">
+            <td><%= item["dish_name"] %></td>
+            <td><%= item["quantity"]%></td>
+            <td>
+              <%= link_to remove_from_cart_path(item["dish_id"]), method: :delete do%>
+                <%= image_tag("trash.png", :class => "Menu_Cash_Icon")%>
+              <% end %>
+            </td>
+
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="Cart-total">
+        <b>Total : <%= @total %> VND</b>
+      </div><br>
+      <%= link_to "Checkout", checkout_path, method: :post,class: "Cart-checkout", data: { confirm: 'Are you sure?' }%>
+    </details>
+  </div>
+    <section class="Dish-section">
+      <% @dishes.each do |dish| %>
+        <div class="Dish-card">
+            <%= image_tag(dish.picture, :class=>"Dish-img") %>
+          <h6 class="Dish-name"><%= dish.name %></h6>
+          <div class="Dish-details">
+            <div class="Dish-price">
+              <%= image_tag("cash.svg", :class => "Menu_Cash_Icon") %>
+              VND. <%= dish.price %>
+            </div>
+            <h6 class="Dish-description"><%= dish.description %></h6>
+            <%= form_tag add_to_cart_path do %>
+              <%= hidden_field_tag :dish_name,dish.name%>
+              <%= hidden_field_tag :dish_price,dish.price%>
+              <%= hidden_field_tag :dish_id, dish.id %>
+              <% found = 0%>
+              <%  @cart.each do |item|%>
+                <% if item["dish_id"] == dish.id%>
+                  <% found =1%>
+                <% end %>
+              <%end%>
+              <%if found==0%>
+                <div class="Dish-description"><strong>Quantity</strong>
+                  <%= number_field_tag :quantity, 1 ,min:1, :class=>"Dish-quantity"%>
+                </div>
+              <%end%>
+              <% if found == 1%>
+                <div class="Dish-addedToCart">
+                  <p>ADDED</p>
+                  <%= image_tag("tick.svg", :class => "Menu_Cash_Icon") %>
+                </div>
+              <% else %>
+
+                <%= button_tag(type: "submit",class: "Dish-addToCart") do%>
+                  ADD TO CART
+                   <%= image_tag("cart.svg", :class => "Menu_Cash_Icon") %>
+                <%end%>
+
+              <%end%>
+            </div>
+          <%end%>
+        </div>
+      <%end%>
+    </section>
+  <% else %>
+    <h2>Sorry no menus found!</h2>
+  <% end %>
+</div>

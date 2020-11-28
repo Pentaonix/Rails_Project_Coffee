@@ -1,0 +1,50 @@
+<div class="New_Dish_Form">
+  <%= form_with(model: menu_item, local: true) do |form| %>
+    <% if menu_item.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(menu_item.errors.count, "error") %> prohibited this menu_item from being saved:</h2>
+
+        <ul>
+          <% menu_item.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="field">
+      <%= form.hidden_field :menu_id, value: menu_id%>
+    </div>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </div>
+    <div class="field">
+      <%= form.label :image, "Choose an Image for your Menu" %>
+      <%= form.file_field :image %>
+    </div>
+    <div class="actions-dish">
+      <% if edit == true %>
+        <%= form.submit "Edit" ,:class => "Menu_New_Submit_Btn large" %>
+        <%= link_to "Back", menu_item_path(menu_item), class: "Menu_New_Submit_Btn large" %>
+        <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' }, class: "Delete_Btn"  do %>
+          <%= image_tag("trash.png") %> Delete
+        <%end%>
+      <%else%>
+          <%= form.submit "Add Dish " ,:class => "Menu_New_Submit_Btn large" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

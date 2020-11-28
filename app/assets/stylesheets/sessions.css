@@ -1,0 +1,58 @@
+.login-wrapper {
+  width: 40%;
+  margin: 10vh auto;
+  background-color: white;
+  padding: 5%;
+  border-radius: 5px;
+}
+
+.login-wrapper > h4 {
+  margin-bottom: 30px;
+  font-weight: 900;
+}
+
+.login-form > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.login-form input {
+  width: 60%;
+}
+
+.submit-wrapper {
+  display: block !important;
+}
+
+.submit-wrapper > input {
+  width: 100% !important;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: brown;
+  color: white;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+}
+
+#alert {
+  padding: 4%;
+  background-color: rgba(250, 114, 114, 0.562);
+  border-radius: 10px;
+  color: black;
+}
+
+#error_explanation {
+  background-color: rgba(250, 114, 114, 0.562);
+
+  padding: 4%;
+
+  width: 90%;
+
+  border-radius: 10px;
+
+  color: black;
+}

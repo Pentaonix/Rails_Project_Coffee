@@ -1,0 +1,39 @@
+<div class="Menu_CreateForm_Wrapper">
+<%= form_with(model: menu, local: true) do |form| %>
+  <% if menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+        <% menu.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Menu Name"%>
+  </div>
+    <div class="field">
+      <%= form.hidden_field :active, value: false%>
+    </div>
+   <div class="field">
+    <%= form.label :image, "Choose an Image for your Menu" %>
+    <%= form.file_field :image %>
+  </div>
+  <% if edit == true %>
+    <div class="actions">
+      <%= form.submit "Edit Menu", :class => "Menu_New_Submit_Btn"%>
+      <%= link_to "Back", menu_path(menu), :class => "Menu_Button"%>
+      <%= link_to menu, method: :delete, data: { confirm: 'Are you sure?' }, class: "Delete_Btn"  do %>
+        <%= image_tag("trash.png") %> Delete
+      <%end%>
+    </div>
+  <% else %>
+    <div class="actions">
+      <%= form.submit "New Menu", :class => "Menu_New_Submit_Btn"%>
+    </div>
+  <%end%>
+<% end %>
+</div>

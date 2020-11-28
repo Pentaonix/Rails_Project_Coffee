@@ -1,0 +1,29 @@
+<div class="user-list-title-wrapper">
+  <h4 class="users-list-title">Users</h4>
+  <%= link_to 'New User', admin_new_user_path, :class=> "new-user-button" %>
+</div>
+<div class="user-list-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Role</th>
+        <th colspan="1">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td>
+          <td>
+          <% if user.id != current_user.id %>
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>

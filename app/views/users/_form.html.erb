@@ -1,0 +1,9 @@
+<% if isAdmin %>
+  <%= form_with(url: "/createuser", method: "post", model: user, local: true, class:"login-form") do |form| %>
+    <%= render :partial => "generalform", :locals => {user: user, form: form, isAdmin: isAdmin} %>
+  <% end %>
+<% else %>
+  <%= form_with(model: user, local: true, class:"login-form") do |form| %>
+      <%= render :partial => "generalform", :locals => {user: user, form: form, isAdmin: isAdmin} %>
+  <% end %>
+<% end %>

@@ -1,0 +1,6 @@
+<h2 class = "Dish_New_Title">New Menu Item</h2>
+<%= render :partial => 'form', :locals => {menu_id: @menu_id, menu_item: @menu_item, edit: false} %>
+
+<div class="Back_Button_Wrapper">
+  <%= link_to 'Back', menus_path , class: "Menu_Button"%>
+</div>

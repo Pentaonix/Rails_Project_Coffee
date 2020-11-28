@@ -1,0 +1,60 @@
+.users-list-title {
+  color: brown;
+  font-weight: 900;
+}
+
+.user-list-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5vh 15vw;
+}
+
+.new-user-button {
+  text-decoration: none;
+  border: 2px solid brown !important;
+  border-radius: 5px;
+  padding: 10px;
+  color: brown !important;
+  transition: 0.5s ease-in-out;
+  background: transparent;
+  text-align: center;
+}
+
+.new-user-button:hover {
+  text-decoration: none !important;
+  color: white !important;
+  background-color: brown;
+}
+
+.user-list-table-wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+.user-list-table-wrapper table,
+tr,
+td,
+thead,
+th {
+  text-align: left;
+}
+
+.user-list-table-wrapper table {
+  /* border-collapse: collapse; */
+  width: 100%;
+}
+
+.user-list-table-wrapper thead {
+  border-bottom: 3px solid black;
+}
+.user-list-table-wrapper th,
+td {
+  padding: 15px;
+}
+.user-list-table-wrapper tr:nth-child(even) {
+  background-color: burlywood;
+}
+
+.user-list-table-wrapper th {
+  font-weight: 900;
+}

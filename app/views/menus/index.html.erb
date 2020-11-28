@@ -1,0 +1,37 @@
+<%= render :partial => "available_menus", :locals => {active: @active}%>
+
+<div class="Menu_Heading_Wrapper">
+  <h3 class="Menu_Heading">Menus Available</h3>
+  <button class="Menu_Button" id= "create_menu">New Menu</button>
+</div>
+<div class="Menu_Create_Wrapper" id="create-menu-form">
+  <%= render :partial => 'form', :locals => {menu: @menu , edit: false} %>
+</div>
+<section class="Menu_Section_Wrapper">
+  <% @menus.each do |menu| %>
+    <%= link_to menu, class: "Menu_Card_Link" do %>
+      <div class="Menu_Card">
+          <%= image_tag(menu.thumbnail, :class =>"Menu_Card_Image")%>
+        <h6 class = "Menu_Card_Title"><%= menu.name %></h6>
+      </div>
+    <% end %>
+  <% end %>
+</section>
+<br>
+<script>
+  let FormState = false;
+  const MenuButton = document.querySelector("#create_menu");
+  const CreateMenuForm = document.getElementById("create-menu-form");
+  console.log(MenuButton, CreateMenuForm);
+
+  MenuButton.addEventListener("click", event => {
+    if(FormState === false) {
+      MenuButton.innerText = "Close";
+      CreateMenuForm.style.display = "block";
+    } else {
+      MenuButton.innerText = "New Menu";
+      CreateMenuForm.style.display = "none";
+    }
+    FormState = !FormState
+  });
+</script>

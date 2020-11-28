@@ -1,0 +1,21 @@
+<div class="login-wrapper">
+  <h4>Login</h4>
+  <% if alert %>
+    <p id="alert"><%= alert %></p>
+  <% end %>
+  <%= form_tag sessions_path, :class=>"login-form" do |form| %>
+    <div>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </div>
+    <div >
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="submit-wrapper">
+      <%= submit_tag "Login" %>
+    </div>
+  <% end %>
+  <%= link_to 'Don\'t have an account?', signup_path %>
+
+</div>

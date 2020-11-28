@@ -1,0 +1,8 @@
+<div class="user-list-title-wrapper">
+  <h4 class="users-list-title">My Orders</h4>
+</div>
+<div class="order-wrapper">
+  <div class="order-list-table-wrapper">
+    <%= render :partial => "orders_table", :locals => {orders: @orders, my_orders: true}%>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+h1 {
+  font-size: 96px;
+  letter-spacing: -1.5;
+}
+
+h2 {
+  font-size: 60px;
+  letter-spacing: -0.5;
+}
+
+h3 {
+  font-size: 48px;
+  letter-spacing: 0;
+}
+h4 {
+  font-size: 34px;
+  letter-spacing: 0.25;
+}
+h5 {
+  font-size: 24px;
+  letter-spacing: 0;
+}
+h6 {
+  font-size: 20px;
+  letter-spacing: 0.15;
+}
+
+.sub-1 {
+  font-size: 16px;
+  letter-spacing: 0.15;
+}
+.sub2 {
+  font-size: 14;
+  letter-spacing: 0.1;
+}

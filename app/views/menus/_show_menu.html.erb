@@ -1,0 +1,40 @@
+<section class="Menu_View_Wrapper">
+  <div class="Menu_Details_Wrapper">
+    <%= image_tag(@menu.thumbnail, :class => "Menu_Details_Picture") %>
+      <% if edit == true %>
+        <div class="Menu_Edit_Form">
+          <%= render :partial => 'form', :locals => {menu: @menu, edit: true} %>
+        </div>
+      <% else %>
+        <div class="Menu_Details">
+          <h2 class="Menu_Detail_Title" id = "menu_heading"><%= @menu.name %></h2>
+          <div>
+            <% if @menu.active == false %>
+              <%= link_to "Mark As Active", menu_activate_path(@menu) ,method: :post, :class => "Menu_Edit_Btn"%>
+            <% end %>
+            <%= link_to "Edit", edit_menu_path(@menu) , :class => "Menu_Edit_Btn"%>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</section>
+<section class="Menu_Dishes_Wrapper">
+  <div class="Menu_Dish_Title">
+    <h4>Dishes Added to this Menu</h4>
+    <%= link_to 'New Dish', new_menu_item_path(:id => @menu.id), class: "Menu_Button" %>
+  </div>
+  <div class="Dish_Card_Wrapper">
+    <% @dishes.each do |dish| %>
+      <%= link_to dish, class: "Menu_Card_Link" do%>
+      <div class="Menu_Dish_Card">
+        <%= image_tag(dish.thumbnail, :class => "Menu_Dish_Image")%>
+        <h5 class="Menu_Dish_Name"><%= dish.name %></h5>
+        <div class="Menu_Dish_Price">
+          <%= image_tag("cash.svg", :class => "Menu_Cash_Icon") %>
+          Rs. <%= dish.price %>
+        </div>
+      </div>
+      <%end%>
+    <%end%>
+  </div>
+</section>

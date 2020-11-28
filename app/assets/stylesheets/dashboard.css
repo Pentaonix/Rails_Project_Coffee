@@ -1,0 +1,94 @@
+.Dashboard{
+  display: flex;
+  flex-direction: row;
+
+}
+.Dash-heading{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+.Dashboard_Icon{
+  width:100px;
+  height:50px;
+}
+.Dash-sidebar{
+  /* border: 5px solid rgb(58, 52, 52); */
+
+  max-width: 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: #926239;
+
+}
+.Dash-sidebar :nth-child(1){
+  margin-top: 100%;
+}
+.Dash-sidebar>*{
+  font-size: larger;
+  font-weight: bolder;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: white;
+  color: black;
+  /* max-width: 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Dash-sidebar > *:hover{
+  border: 1px dashed white;
+  color: white !important;
+}
+.Dash-active{
+  text-align: right;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.Dash-charts{
+  margin: 10px 20px;
+  flex-grow:1;
+  max-width: 90vw;
+
+}
+.Dash-Active{
+  border-bottom: 5px solid rgb(96, 243, 96);
+}
+.Dash-card{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+
+  /* border: 10px solid brown; */
+}
+.Dash-card > *{
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #cfa27b;
+  background-color: white;
+  border-radius: 15px;
+  width:40vw ;
+  /* margin:10px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: all 200ms ease-in;
+  transform: scale(1);
+
+}
+.Dash-card > *:hover{
+  box-shadow: 0px 0px 30px #5a5a5a;
+  transition: all 200ms ease-in;
+}
+.Chart-label{
+  margin-top:15px;
+}

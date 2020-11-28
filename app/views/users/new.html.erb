@@ -1,0 +1,7 @@
+<div class="login-wrapper">
+  <h4>Signup</h4>
+
+ <%= render :partial => 'form', :locals => {user: @user, isAdmin: false} %>
+
+  <%= link_to 'Have an account?', login_path %>
+</div>

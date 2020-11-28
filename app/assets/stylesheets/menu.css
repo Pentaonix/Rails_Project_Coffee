@@ -1,0 +1,279 @@
+.Menu_Heading_Wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 5% auto;
+}
+.Menu_Heading {
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.Menu_Section_Wrapper {
+  display: grid;
+  width: 70%;
+  margin: 5vh auto;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-gap: 20px;
+}
+
+.Menu_Card {
+  background-color: white;
+  box-shadow: 1px 1px 30px #b9b9b9;
+  text-align: center;
+  border-radius: 10px;
+  height: 100%;
+  transition: 0.3s ease-in;
+  color: var(--text-primary);
+}
+
+.Menu_Card:hover {
+  box-shadow: 3px 3px 30px #797979;
+}
+.Menu_Card_Image {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  max-height: 250px;
+}
+.Menu_Card_Title {
+  margin: 25px 15px;
+}
+
+.Menu_Card_Link {
+  text-decoration: none;
+  height: 100%;
+}
+
+.Menu_Card_Link:hover {
+  text-decoration: none !important;
+  color: black !important;
+  background-color: transparent;
+}
+
+.Menu_Button {
+  text-decoration: none;
+  border: 2px solid brown !important;
+  border-radius: 5px;
+  padding: 10px;
+  color: brown !important;
+  transition: 0.5s ease-in-out;
+  background: transparent;
+  text-align: center;
+}
+
+.Menu_Button:hover {
+  text-decoration: none !important;
+  color: white !important;
+  background-color: brown;
+}
+
+.Menu_Create_Heading {
+  color: brown;
+  text-align: center;
+}
+
+.Menu_Create_Wrapper {
+  display: none;
+}
+
+.Menu_CreateForm_Wrapper {
+  width: 60%;
+  margin: 10vh auto;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.Menu_New_Wrapper {
+  width: 70%;
+  margin: 5vh auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actions {
+  text-align: center;
+}
+.Menu_New_Submit_Btn {
+  border: 0;
+  background-color: brown;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.large {
+  width: 40%;
+  margin-top: 2%;
+}
+
+.Menu_View_Wrapper {
+  width: 70%;
+  margin: 10vh auto;
+}
+
+.Menu_Details_Wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+}
+
+.Menu_Details_Picture {
+  border-radius: 10px;
+  max-height: 300px;
+}
+
+.Menu_Detail_Title {
+  color: brown;
+  font-weight: 800;
+}
+
+.Menu_Details {
+  margin-left: 10%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Menu_Edit_Btn {
+  background-color: brown;
+  border: 2px solid brown;
+  padding: 10px;
+  color: white;
+  margin-right: auto;
+  border-radius: 5px;
+  max-height: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.Menu_Dishes_Wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.Menu_Dish_Title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Menu_Dish_Title > h4 {
+  color: black;
+  font-weight: bold;
+}
+.Menu_Dishes_Wrapper {
+  width: 70%;
+  margin: 5vh auto;
+}
+
+.Menu_Dish_Card {
+  background-color: white;
+  height: 100%;
+  box-shadow: 1px 1px 30px grey;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Dish_Card_Wrapper {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 20px;
+  margin: 5vh 0;
+}
+
+.Menu_Dish_Image {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  flex-grow: 2;
+}
+
+.Menu_Dish_Name {
+  line-height: 1.5;
+  margin: 10px;
+  flex-grow: 1;
+}
+
+.Menu_Dish_Price {
+  text-align: center;
+  background-color: rgba(0, 128, 0, 0.349);
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  border-radius: 0 0 10px 10px;
+}
+
+.Menu_Cash_Icon {
+  width: 30px;
+}
+
+.Menu_Edit_Form {
+  width: 100%;
+}
+
+.New_Dish_Form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.Dish_New_Title {
+  margin: 5vh 0;
+  text-align: center;
+  font-weight: 800;
+  color: brown;
+}
+
+.Back_Button_Wrapper {
+  margin-top: 10vh;
+  width: 100%;
+  text-align: center;
+}
+
+.Dish_Detail_View {
+  width: 70%;
+  border-radius: 20px;
+  height: 70vh;
+  margin: 5vh auto;
+  padding: 5vh;
+}
+
+.Dish_Title {
+  text-align: center;
+  color: brown;
+}
+
+.Dish_detail_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.Dish_Detail_Image {
+  max-height: 300px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 30px grey;
+  margin-right: 10%;
+}
+
+.Dish_Details_Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80%;
+  min-height: 300px;
+}
+.actions-dish {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Delete_Btn > img {
+  width: 25px;
+}
