@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   require "net/http"
-  before_action :authenticate, except: [:get_invoice, :my_orders, :show]
+  before_action :authenticate, except: [:createorder, :get_invoice, :my_orders, :show]
 
   def index
     @page = params.fetch(:page, 0).to_i || 0
@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def createorder
+    if current_user
       if session[:cart]
         order = Order.new({ :user_id => current_user.id, :total => 0, :status => "Pending" })
         tot = 0
@@ -40,6 +41,9 @@ class OrdersController < ApplicationController
         order.save
       end
       redirect_to dishes_path
+    else 
+      redirect_to login_path
+    end
   end
 
   def mark_as_complete

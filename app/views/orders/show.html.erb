@@ -10,7 +10,7 @@
         <thead>
           <tr>
             <td> Name </td>
-            <td> Price / unit </td>
+            <td> Price/unit </td>
             <td> Quantity </td>
             <td> Sub Total </td>
           </tr>
@@ -26,7 +26,7 @@
           <% end %>
         </tbody>
       </table>
-      <h6 class="order-grand-total">Total amount paid: <span class="order-details-total"> Rs.<%= @order.total %></span></h6>
+      <h6 class="order-grand-total">Total amount paid: <span class="order-details-total"> <%= @order.total %> VND.</span></h6>
     </section>
     <%= link_to "Download Invoice", invoice_path(id: @order.id), class: "download-invoice" %>
   </div>
