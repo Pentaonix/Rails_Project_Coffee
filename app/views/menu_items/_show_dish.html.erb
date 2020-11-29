@@ -10,7 +10,7 @@
           <%= @menu_item.description%>
         </p>
         <div class="Dish_Detail_Price">
-          Rs. <%= @menu_item.price %>
+          <%= @menu_item.price %> VND
         </div>
         <%= link_to "Edit Dish" ,edit_menu_item_path(@menu_item), :class => "Menu_Button"%>
       </div>

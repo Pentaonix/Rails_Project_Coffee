@@ -15,7 +15,7 @@
           <tr>
             <td><%= link_to order do%> <%= order.id%><%end%></td>
             <% if order.user.role == "Admin" || order.user.role == "Biller" %>
-              <td>Walk-in Customer</td>
+              <td><%= order.user.name %> (Admin)</td>
             <% else %>
               <td><%= order.user.name %></td>
             <% end %>

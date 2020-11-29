@@ -16,7 +16,7 @@
         <hr class="horizontal-line" />
         <div>
           <%= form_tag({},{:method => :get, :class=>"search-by-user"}) do %>
-            <%= number_field_tag 'user', nil, min: 1, placeholder: "@user_id eg: 14" %>
+            <%= number_field_tag 'user', nil, min: 1, placeholder: "@user_id eg: 1" %>
             <%= submit_tag "Search by User"%>
           <% end %>
         </div>
