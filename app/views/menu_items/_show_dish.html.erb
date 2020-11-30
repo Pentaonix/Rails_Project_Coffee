@@ -13,7 +13,8 @@
           <%= @menu_item.price %> VND
         </div>
         <%= link_to "Edit Dish" ,edit_menu_item_path(@menu_item), :class => "Menu_Button"%>
-      </div>
+        <%= link_to 'Back', menus_path , class: "Menu_Button"%>
+        </div>
     <% end %>
   </div>
 </div>

@@ -17,12 +17,12 @@
         <h6 class="Chart-label"> DISHES' ORDERS-COUNT </h6>
       </div>
       <div>
-        <%= area_chart @dish_and_amount, xtitle: "Dish", ytitle: "Amount of purchase(Rs.)",colors: ["#000", "#666"] %>
-        <h6 class="Chart-label"> DISHES' ORDERS-TOTAL_SUM (Rs.) </h6>
+        <%= area_chart @dish_and_amount, xtitle: "Dish", ytitle: "Amount of purchase(VND.)",colors: ["#000", "#666"] %>
+        <h6 class="Chart-label"> DISHES' ORDERS-TOTAL_SUM (VND) </h6>
       </div>
       <div>
-        <%= line_chart @revenue_daily , xtitle: "Day", ytitle: "Revenue (Rs.)",colors: ["#0f0", "#666"] %>
-        <h6 class="Chart-label"> REVENUE (Rs.) per DAY </h6>
+        <%= line_chart @revenue_daily , xtitle: "Day", ytitle: "Revenue (VND)",colors: ["#0f0", "#666"] %>
+        <h6 class="Chart-label"> REVENUE (VND) per DAY </h6>
       </div>
       <div>
         <%= pie_chart @completed_and_pending, xtitle: "Count", ytitle: "Status",donut: true, colors: ["#FF4500","#0f0"]%>
