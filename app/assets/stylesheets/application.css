@@ -58,8 +58,10 @@ body {
 
 #notice-wrapper {
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 9vh;
+  right: 0;
+  width: 20%;
+  border-radius: 5px 0px 0px 5px;
   padding: 1.5rem 0;
   text-align: center;
   background-color: rgba(0, 128, 0, 0.603);
