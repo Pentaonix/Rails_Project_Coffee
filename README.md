@@ -1,24 +1,6 @@
-# README
+# The Coffee Shop 
+<p>A website about a coffeeshop. Manage the sales of coffee like Coffee house’s website<p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](https://github.com/Pentaonix/Rails_Project_Coffee/blob/master/demo%201.png)
+![](https://github.com/Pentaonix/Rails_Project_Coffee/blob/master/demo%202.png)
